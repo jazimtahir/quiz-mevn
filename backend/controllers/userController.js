@@ -88,16 +88,11 @@ const login = asyncHandler(async (req, res) => {
             })
         }
     } else {
-        res.status(404).json({
+        res.status(400).json({
             error: true,
             message: 'User not Found'
         })
     }
-
-    res.status(201).json({
-        email: email,
-        password: password
-    })
 })
 
 const session = asyncHandler( async (req, res) => {

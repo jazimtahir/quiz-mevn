@@ -19,7 +19,7 @@ const getMcq = asyncHandler( async (req, res) => {
     const mcq = await MCQ.findById(req.params.id).select('statement').populate('options')
 
     if (!mcq) {
-        res.status(404).json({
+        res.status(400).json({
             error: true,
             message: 'MCQ not found'
         })

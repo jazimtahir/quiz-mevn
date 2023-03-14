@@ -9,10 +9,21 @@ connectDB()
 const app = express()
 
 // app.use(express.urlencoded({extended: false}))
+
 app.use(express.json())
 
 app.get('/', (req, res) => {
     res.status(200).json({message: 'Server is up'})
+})
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', '*')
+    if (req.method === 'OPTIONS') {
+        res.sendStatus(200)
+    }
+    next()
 })
 
 app.use('/api', require('./routes/user'))

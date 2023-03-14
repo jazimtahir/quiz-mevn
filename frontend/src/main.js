@@ -1,9 +1,18 @@
 import { createApp } from 'vue'
-import store from './store/index'
+import { createPinia } from 'pinia'
 import App from './App.vue'
-
+import router from './router'
+import http from '@/api/index'
 import './assets/main.css'
 
 const app = createApp(App)
-app.use(store)
+const pinia = createPinia()
+
+app.use(pinia)
+app.use(router)
 app.mount('#app')
+
+let token = JSON.parse( localStorage.getItem('token') );
+if( token ){
+    http.defaults.headers.common['Authorization'] = `Bearer ${token}`
+}
