@@ -8,6 +8,11 @@ const routes = [
         component: Home
     },
     {
+        path: '/mcqs',
+        name: 'MCQS',
+        component: () => import ('@/views/MCQS.vue')
+    },
+    {
         path: '/login',
         name: 'Login',
         //lazy loading

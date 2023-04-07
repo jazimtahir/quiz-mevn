@@ -27,6 +27,6 @@ app.use((req, res, next) => {
 })
 
 app.use('/api', require('./routes/user'))
-app.use('/api/mcq', protect, require('./routes/mcq'))
+app.use('/api/mcqs', protect, require('./routes/mcq'))
 
 app.listen(port, () => console.log(`Server is listening on port ${port}`))

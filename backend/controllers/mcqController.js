@@ -4,7 +4,7 @@ const MCQ = require('../models/mcqModel')
 const Option = require('../models/optionModel')
 
 const getMcqs = asyncHandler( async (req, res) => {
-    const mcqs = await MCQ.find().populate('options').select('statement').lean().exec()
+    const mcqs = await MCQ.find({ user: req.user }).populate('options').select('statement').lean().exec()
     
     //using loop to fetch mcq options bcz ppopulate() not working
     for (mcq of mcqs) {

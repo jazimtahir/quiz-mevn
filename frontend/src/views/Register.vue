@@ -3,6 +3,7 @@
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <div class="w-full bg-gray-800 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
                 <div class="p-6 sm:p-8">
+                    <h1 class="text-center mb-4 text-2xl text-white md:text-5xl lg:text-4xl">Register</h1>
                     <form class="" @submit.prevent="login">
                         <label for="username" class="text-sm font-medium text-white">Username</label>
                         <input id="username" type="text" v-model="username" class="mt-2 mb-4 bg-gray-600 border border-blue-900 text-gray-100 sm:text-sm rounded focus:ring-blue-600 focus:border-blue-700 w-full p-1.5" autocomplete="off" />
