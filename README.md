@@ -18,12 +18,16 @@ copy .env.example .env (Windows)
 ```bash
   cd project
   npm install
-  npm run server (for development)
 ```
-## Front-end
 
+## Front-end
 ```bash
   cd project/frontend
   npm install
-  npm run client
+```
+## Development
+```bash
+  cd project
+  npm run server (backend)
+  npm run client (frontend)
 ```
